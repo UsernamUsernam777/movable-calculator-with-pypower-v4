@@ -11,7 +11,7 @@ result = create_op()
 result.pack(pady=10)
 syms = pypower.GUI.CustomTk.console(main, ['-', '+', '÷', '×', '='], 3 , op, return_dic_frame_and_buttons=True, font=('arial', 30))
 syms['frame'].pack()
-pypower.GUI.CustomTk.console_num(main, entry_to_insert=op, font=('arial', 30)).pack()
+pypower.GUI.CustomTk.console(main, range(10), entry_to_insert=op, font=('arial', 30)).pack()
 def calc():
     try:
         res = simple_eval(pypower.String(op.get()).replace_many(['÷', '×'], ['/', '*']))
